@@ -1,6 +1,7 @@
 /* ==========================
         QAItem Class
 ========================== */
+/* Represents a single FAQ item with toggle functionality */
 class QAItem 
 {
 
@@ -10,6 +11,7 @@ class QAItem
         this.answer = answer;
     }
 
+    // Toggles visibility of answer and updates active state for styling
     toggle(questionElement, answerElement) {
         questionElement.classList.toggle("active");
         answerElement.classList.toggle("show");
@@ -18,8 +20,8 @@ class QAItem
     render() 
     {
 
-        const container = document.createElement("div");
-        container.className = "faq-item";
+       const container = document.createElement("article");
+       container.className = "faq-item";
 
         const questionElement = document.createElement("div");
         questionElement.className = "question";
