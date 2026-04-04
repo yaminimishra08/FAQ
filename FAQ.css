@@ -5,20 +5,27 @@ body{
     padding: 40px 20px;
 }
 
+/* Center content instead of pushing from left */
+#faq-container {
+    max-width: 650px;
+    margin: 30px auto 0 auto; /* centers horizontally */
+    padding: 0 10px;
+}
+
 /*Styling heading*/
 h1{
     font-family:'Times New Roman', Times, serif;
-    font-size: 80px;
+    font-size: clamp(32px, 6vw, 80px); /* responsive scaling */
     color: #000;
     text-align: left;
-    margin-left: 80px;
-    margin-bottom: 10px;
+    margin-left: 0 auto 10px auto;
+    max-width: 650px;
 }
 
 h1::after{
     content: "";
     display: block;
-    width: 650px;
+    width: 100%; /* responsive instead of fixed */  
     height: 4px;
     margin-top: 15px;
     background: linear-gradient(to right, #ff8fab, #ffb07c);
@@ -41,7 +48,7 @@ FAQ Container Styling
     position: relative;
     cursor: pointer;
     padding: 15px 35px 15px 0;
-    font-size: 22px;
+    font-size: clamp(16px, 2.5vw, 22px);
     font-weight: bold;
     border-top: 1px solid #ff9b94;
     border-bottom: 1px solid #ff9b94;
@@ -79,7 +86,7 @@ Styling Minus icon
     max-height: 0;
     overflow: hidden;
     padding-left: 15px;
-    font-size: 19px;
+    font-size: clamp(14px, 2.3vw, 19px);
     line-height: 1.6;
     transition: max-height 0.35s ease;
 }
@@ -90,4 +97,22 @@ Styling Minus icon
     margin-top: 8px;
     padding: 10px 15px;
     border-left: 3px solid #ff5040;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #faq-container {
+        margin-top: 20px;
+    }
+
+    .question {
+        padding: 12px 30px 12px 0;
+    }
 }
